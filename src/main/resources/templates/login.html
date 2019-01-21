@@ -1,0 +1,34 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>LOGIN</title>
+    <meta charset="UTF-8" content="text/html" http-equiv="Content-Type"/>
+</head>
+<body>
+<h2>CUSTOM LOGIN PAGE</h2>
+
+<div th:if="${param.error != null}">
+    <h2>Invalid Username or password</h2>
+    <h2 th:value="${param.error}"></h2>
+</div>
+
+<div th:if="${param.logout != null}">
+    <h2>You have been logged out.</h2>
+</div>
+
+<form method="post">
+    <p>
+        <label for="username">Username</label>
+        <input id="username" name="username" type="text" value="user88"/>
+    </p>
+    <p>
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" value="pwd88"/>
+    </p>
+
+    <input th:name="${_csrf.parameterName}" th:value="${_csrf.token}" type="hidden"/>
+    <button class="btn" type="submit">Login</button>
+
+</form>
+
+</body>
+</html>
