@@ -25,15 +25,16 @@ public class MemberTest {
     @Test
     public void testInsert() {
         for (int i = 0; i < 100; i++) {
+            log.info("user" + i);
             Member member = new Member();
             member.setUrid("user" + i);
             member.setPassword("pwd" + i);
             member.setUsername("사용자" + i);
 
             Role role = new Role();
-            if (i <= 80) {
+            if (i <= 30) {
                 role.setRoleName("BASIC");
-            } else if (i <= 90) {
+            } else if (i <= 50) {
                 role.setRoleName("MANAGER");
             } else {
                 role.setRoleName("ADMIN");
