@@ -18,11 +18,15 @@
 <form method="post">
     <p>
         <label for="username">Username</label>
-        <input id="username" name="username" type="text" value="user88"/>
+        <input id="username" name="username" type="text"/>
     </p>
     <p>
         <label for="password">Password</label>
-        <input id="password" name="password" type="password" value="pwd88"/>
+        <input id="password" name="password" type="password"/>
+    </p>
+    <p>
+        <label for="text">Remember Me</label>
+        <input id="remember-me" name="remember-me" type="checkbox">
     </p>
 
     <input th:name="${_csrf.parameterName}" th:value="${_csrf.token}" type="hidden"/>

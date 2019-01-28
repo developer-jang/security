@@ -39,7 +39,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //        Logout httpSecurity.logout().invalidateHttpSession(true); 별도의 로그아웃 화면 없는 경우
         httpSecurity.logout().logoutUrl("/logout").invalidateHttpSession(true);
 
-        httpSecurity.userDetailsService(customUserDetailService);
+        httpSecurity.rememberMe().key("zero").userDetailsService(customUserDetailService);
     }
 }
 
