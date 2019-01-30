@@ -31,6 +31,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         log.info("security Config....");
         httpSecurity.authorizeRequests().antMatchers("/guest/**").permitAll();
+        httpSecurity.authorizeRequests().antMatchers("/member/**").permitAll();
         httpSecurity.authorizeRequests().antMatchers("/manager/**").hasRole("MANAGER");
         httpSecurity.authorizeRequests().antMatchers("/admin/**").hasRole("ADMIN");
 //        antMatchers는 특정경로, authorizeRequests()는 HttpServletReuest를 이용한다는 것.
